@@ -1,14 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaBrain, FaCertificate, FaHandsHelping } from "react-icons/fa";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { FaBrain, FaCertificate, FaHandsHelping, FaLanguage } from "react-icons/fa";
+
+// Badge images
+import Badge100 from "../assets/leetcode/badge-100.png";
+import Badge50 from "../assets/leetcode/badge-50.png";
+import BadgeMar from "../assets/leetcode/badge-mar.png";
+import BadgeFeb from "../assets/leetcode/badge-feb.png";
 
 // Section Card Component
 const Section = ({ icon, title, items, color }) => (
   <motion.div
-    className={`rounded-3xl bg-opacity-90 w-full max-w-md mx-auto p-6 shadow-xl ${color}`}
+    className={`rounded-3xl bg-opacity-90 w-[340px] min-h-[280px] md:w-[360px] p-6 shadow-xl ${color} hover:shadow-2xl transition duration-300`}
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6 }}
@@ -27,75 +30,104 @@ const Section = ({ icon, title, items, color }) => (
 );
 
 const KnowMore = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 2500,
-    pauseOnHover: true,
-    pauseOnFocus: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    centerMode: false,
-    arrows: true,
-  };
-
   return (
     <div
       id="KnowMore"
-      className="min-h-screen bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] px-4 py-16 md:px-20"
+      className="min-h-screen bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] px-2 md:px-10 py-10"
     >
-      <h1 className="text-4xl font-bold text-center text-White-200 mb-12 drop-shadow">
+      <h1 className="text-4xl font-bold text-center text-white mb-12 drop-shadow">
         Know More About Me
       </h1>
 
-      <div className="bg-pink-300  backdrop-blur-lg p-8 md:p-12 rounded-3xl shadow-2xl w-full max-w-5xl mx-auto">
-        <Slider {...settings}>
-          <div>
-            <Section
-              icon={<FaBrain className="text-white text-3xl" />}
-              title="Soft Skills"
-              color="bg-[#6a0572]"
-              items={[
-                "Problem-Solving",
-                "Teamwork & Collaboration",
-                "Adaptability",
-                "Communication Skills",
-              ]}
-            />
-          </div>
-          <div>
-            <Section
-              icon={<FaCertificate className="text-white text-3xl" />}
-              title="Certifications"
-              color="bg-[#007991]"
-              items={[
-                "Vidyarthi - Python Essentials (2023)",
-                "Coursera - Computer Networks (2023)",
-                "NPTEL - Cloud Computing (2024)",
-                "Cisco - Cyber Security (2025)",
-                "Cisco - JavaScript Essentials 1 (2025)",
-                "NPTEL - Market Analytics (2025)",
-              ]}
-            />
-          </div>
-          <div>
-            <Section
-              icon={<FaHandsHelping className="text-white text-3xl" />}
-              title="Extra-Curricular"
-              color="bg-[#ff6f61]"
-              items={[
-                "Rajasthan Club Core Member - Cultural Team",
-                "NGO Volunteer - Utkarsh Prayaas School",
-                "Hackathon Participant - AI/ML solutions",
-                "Internship in Web Dev & Python with Yhills",
-              ]}
-            />
-          </div>
-        </Slider>
+      {/* Horizontal Scroll Section Cards */}
+      <div className="bg-pink-300 backdrop-blur-lg p-6 md:p-8 rounded-3xl shadow-2xl w-full overflow-x-auto whitespace-nowrap flex gap-6">
+        <Section
+          icon={<FaBrain className="text-white text-3xl" />}
+          title="Soft Skills"
+          color="bg-[#6a0572]"
+          items={[
+            "Problem-Solving",
+            "Teamwork",
+            "Communication",
+            "Adaptability",
+            "Time Management",
+            "Self-Learning",
+          ]}
+        />
+        <Section
+          icon={<FaCertificate className="text-white text-3xl" />}
+          title="Certifications"
+          color="bg-[#007991]"
+          items={[
+            "Python Essentials – Vidyarthi (2023)",
+            "Coursera – Computer Networks (2023)",
+            "NPTEL – Cloud Computing (2024)",
+            "Cisco – Cyber Security (2025)",
+            "Cisco – JavaScript Essentials (2025)",
+            "NPTEL – Market Analytics (2025)",
+            "AWS Solution Architect – GFG (2025)",
+          ]}
+        />
+        <Section
+          icon={<FaHandsHelping className="text-white text-3xl" />}
+          title="Extra-Curricular"
+          color="bg-[#ff6f61]"
+          items={[
+            "Core Member – Rajasthan Club",
+            "Volunteer – Utkarsh Prayaas School",
+            "Hackathon Participant – AI/ML",
+            "Intern – Yhills (Web Dev, AI/ML)",
+            "Sports: Table-Tennis & Karate",
+          ]}
+        />
+        <Section
+          icon={<FaLanguage className="text-white text-3xl" />}
+          title="Languages Known"
+          color="bg-[#1f4e5f]"
+          items={[
+            "Hindi – Expert",
+            "English – Professional",
+            "French – Beginner",
+          ]}
+        />
       </div>
+
+      {/* LeetCode Badges Section */}
+      <div className="mt-10 px-4 md:px-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-6">
+          LeetCode Badges
+        </h2>
+
+        <div className="flex flex-wrap justify-center gap-8">
+          {/* Badge Card */}
+          {[
+            { img: Badge100, title: "100 Days Badge", date: "2025-05-03" },
+            { img: Badge50, title: "50 Days Badge", date: "2025-02-21" },
+            { img: BadgeMar, title: "Mar Badge", date: "2025-03-31" },
+            { img: BadgeFeb, title: "Feb Badge", date: "2025-02-28" },
+          ].map((badge, i) => (
+            <motion.div
+              key={i}
+              className="flex flex-col items-center p-4 bg-white/10 rounded-xl backdrop-blur-md shadow-lg w-[130px] h-[160px] text-center text-white text-sm md:text-base"
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+            >
+              <img src={badge.img} alt={badge.title} className="w-12 h-12 mb-2" />
+              <p className="font-semibold leading-tight">{badge.title}</p>
+              <p className="text-xs text-gray-300 mt-1">{badge.date}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
     </div>
   );
 };
 
 export default KnowMore;
+
+

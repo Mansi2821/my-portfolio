@@ -9,10 +9,15 @@ import hospitalImg from "../../assets/hospital.jpg";
 
 const Projects = () => {
   return (
-    <div id="Projects" className="p-10 md:p-24 bg-[#0f111c] text-white">
-      <h1 className="text-3xl md:text-5xl font-extrabold text-orange-300 mb-12 text-center">Projects</h1>
+    <div
+      id="Projects"
+      className="bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white px-6 md:px-20 py-16 md:py-24 rounded-3xl shadow-xl"
+    >
+      <h1 className="text-4xl md:text-5xl font-bold text-center text-orange-300 mb-16">
+        Projects
+      </h1>
 
-      <div className="flex flex-wrap justify-between gap-y-10">
+      <div className="flex flex-wrap justify-center gap-12">
         <ProjectCard
           title="Driver Drowsiness Detection"
           main="Real-time system using OpenCV & Deep Learning to detect driver fatigue. Alerts drivers using face & eye tracking."
@@ -43,5 +48,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-

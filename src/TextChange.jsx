@@ -8,24 +8,22 @@ const TextChange = () => {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const currentString = texts[textIndex];
+    const currentChars = Array.from(texts[textIndex]);
     const updatedText = isDeleting
-      ? currentString.substring(0, charIndex - 1)
-      : currentString.substring(0, charIndex + 1);
+      ? currentChars.slice(0, charIndex - 1).join("")
+      : currentChars.slice(0, charIndex + 1).join("");
 
     setCurrentText(updatedText);
 
-    if (!isDeleting && updatedText === currentString) {
-      setTimeout(() => setIsDeleting(true), 1000); // pause before deleting
+    if (!isDeleting && updatedText === texts[textIndex]) {
+      setTimeout(() => setIsDeleting(true), 1000);
     } else if (isDeleting && updatedText === "") {
       setIsDeleting(false);
       setTextIndex((prev) => (prev + 1) % texts.length);
     }
 
     const timer = setTimeout(() => {
-      setCharIndex((prev) =>
-        isDeleting ? prev - 1 : prev + 1
-      );
+      setCharIndex((prev) => (isDeleting ? prev - 1 : prev + 1));
     }, isDeleting ? 50 : 100);
 
     return () => clearTimeout(timer);
@@ -40,3 +38,4 @@ const TextChange = () => {
 };
 
 export default TextChange;
+
