@@ -12,13 +12,14 @@ const Navbar = () => {
         Portfolio
       </span>
 
-      {/* Right Section (Resume + Menu or Menu Icon) */}
+      {/* Right Section (Menu + Resume) */}
       <div className="flex items-center gap-6">
-        {/* Resume Button - visible on all screens */}
+        
+        {/* Resume Button - only visible on desktop */}
         <a
           href="/resume.pdf"
           download
-          className="bg-pink-200 hover:bg-pink-300 text-[#1a1a2e] font-semibold py-2 px-4 rounded-full text-sm md:text-base shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+          className="hidden md:inline-block bg-pink-200 hover:bg-pink-300 text-[#1a1a2e] font-semibold py-2 px-4 rounded-full text-sm md:text-base shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg"
         >
           Download Resume
         </a>
@@ -76,6 +77,17 @@ const Navbar = () => {
           <li onClick={() => setMenu(false)} className="hover:text-[#94b4fa] transition-all">
             <a href="#Footer">Contact</a>
           </li>
+
+          {/* Resume Button for Mobile Menu */}
+          <li onClick={() => setMenu(false)}>
+            <a
+              href="/resume.pdf"
+              download
+              className="bg-pink-200 hover:bg-pink-300 text-[#1a1a2e] font-semibold py-2 px-4 rounded-full text-sm shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg inline-block mt-2"
+            >
+              Download Resume
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -83,4 +95,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
 

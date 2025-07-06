@@ -6,28 +6,30 @@ const Experience = () => {
   return (
     <div
       id="Experience"
-      className="bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white px-4 md:px-12 py-10 rounded-3xl shadow-xl mx-4 md:mx-10"
+      className="bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white px-4 md:px-12 py-14 rounded-3xl shadow-xl mx-4 md:mx-10"
     >
-      <h1 className="text-4xl md:text-5xl font-bold text-center mb-12">
+      <h1 className="text-4xl md:text-5xl font-bold text-center mb-14">
         Experience & Education
       </h1>
 
-      <div className="md:flex items-center justify-between gap-12">
+      <div className="md:flex items-center justify-between gap-14">
         {/* Left: Text Info */}
-        <div className="md:w-1/2 space-y-8">
+        <div className="md:w-1/2 space-y-10">
           {/* Experience */}
-          <div className="bg-slate-900 bg-opacity-60 rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform duration-300">
+          <div className="bg-[#1f2937]/70 rounded-2xl p-6 shadow-2xl border border-[#334155] hover:scale-[1.02] transition-transform duration-300">
             <h2 className="text-2xl md:text-3xl font-semibold mb-3 text-[#38bdf8]">
               Professional Experience
             </h2>
             <p className="text-base md:text-lg text-gray-300">Fresher</p>
             <p className="text-sm md:text-base mt-2 text-gray-400 leading-relaxed">
-              Eager to apply technical skills in a real-world environment. Actively building personal projects and participating in hackathons to gain hands-on experience.
+              Eager to apply technical skills in a real-world environment.
+              Actively building personal projects and participating in
+              hackathons to gain hands-on experience.
             </p>
           </div>
 
           {/* Education */}
-          <div className="bg-slate-900 bg-opacity-60 rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform duration-300">
+          <div className="bg-[#1f2937]/70 rounded-2xl p-6 shadow-2xl border border-[#334155] hover:scale-[1.02] transition-transform duration-300">
             <h2 className="text-2xl md:text-3xl font-semibold mb-3 text-[#34d399]">
               Education
             </h2>
@@ -40,11 +42,13 @@ const Experience = () => {
               </li>
               <li>
                 <p className="font-bold text-white text-lg">Higher Secondary (PCMB)</p>
+                <p>DAV Public School, Gurugram</p>
                 <p className="text-gray-400">(2020 – 2022)</p>
                 <p className="text-white font-semibold">Percentage: 91.8%</p>
               </li>
               <li>
                 <p className="font-bold text-white text-lg">Secondary Education</p>
+                <p>SD Adarsh Vidyalaya, Gurugram</p>
                 <p className="text-gray-400">(2019 – 2020)</p>
                 <p className="text-white font-semibold">Percentage: 95.4%</p>
               </li>
@@ -63,7 +67,7 @@ const Experience = () => {
           <img
             src={ExperienceImg}
             alt="Experience Visual"
-            className="w-[85%] md:w-[90%] rounded-2xl shadow-xl"
+            className="w-[85%] md:w-[90%] rounded-2xl shadow-2xl"
           />
         </motion.div>
       </div>
@@ -72,6 +76,7 @@ const Experience = () => {
 };
 
 export default Experience;
+
 
 
 
