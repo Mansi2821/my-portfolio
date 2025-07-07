@@ -5,7 +5,8 @@ import TextChange from "../../TextChange.jsx";
 
 const Home = () => {
   return (
-    <div className="text-white w-full min-h-screen bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] flex flex-col md:flex-row justify-between items-center px-2 py-4 md:px-6 md:py-6">
+    <div className="text-white w-full min-h-screen bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] flex flex-col-reverse md:flex-row justify-between items-center px-2 py-10 md:px-6 md:py-16 gap-10">
+
       {/* Left Text Section */}
       <motion.div
         className="md:w-1/2"
@@ -17,7 +18,7 @@ const Home = () => {
         <h1 className="text-3xl md:text-6xl font-bold leading-snug tracking-tight text-[#E9F1FA] drop-shadow">
           <TextChange />
         </h1>
-        <p className="text-xs md:text-base tracking-tight mt-6 text-gray-300 leading-relaxed">
+        <p className="text-lg md:text-base tracking-tight mt-6 text-gray-300 leading-relaxed">
           A passionate web developer crafting dynamic and responsive websites. I
           enjoy learning new technologies and building smooth user experiences
           with clean, elegant code.

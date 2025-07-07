@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer
       id="Footer"
-      className="w-full px-4 md:px-10 py-8 bg-gradient-to-tr from-[#b3e5c3] via-[#a3e0b8] to-[#8ed2aa] text-black shadow-inner"
+      className="w-full px-4 md:px-10 py-8 bg-blue-300 text-black shadow-inner"
     >
       <div className="flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Contact Heading */}

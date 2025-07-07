@@ -6,13 +6,13 @@ const Experience = () => {
   return (
     <div
       id="Experience"
-      className="bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white px-4 md:px-12 py-14 rounded-3xl shadow-xl mx-4 md:mx-10"
+      className="bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white px-4 md:px-12 py-14 mt-5 rounded-3xl shadow-xl mx-4 md:mx-10"
     >
       <h1 className="text-4xl md:text-5xl font-bold text-center mb-14">
         Experience & Education
       </h1>
 
-      <div className="md:flex items-center justify-between gap-14">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-14">
         {/* Left: Text Info */}
         <div className="md:w-1/2 space-y-10">
           {/* Experience */}
@@ -58,7 +58,7 @@ const Experience = () => {
 
         {/* Right: Image */}
         <motion.div
-          className="md:w-1/2 mt-10 md:mt-0 flex justify-center"
+          className="md:w-1/2 mb-10 md:mb-0 flex justify-center"
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, type: "spring" }}
@@ -76,6 +76,7 @@ const Experience = () => {
 };
 
 export default Experience;
+
 
 
 
